@@ -7,7 +7,7 @@ import jwt from "jsonwebtoken";
 dotenv.config();
 const app = express();
 app.use(express.json());
-const PORT = 8010;
+const PORT = process.env.PORT;
 
 const prisma = new PrismaClient();
 

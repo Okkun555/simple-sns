@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export const Navbar = () => {
   return (
-    <header className="bg-gray-700 p-4 text-white">
+    <header className="bg-gray-700 p-2 text-white">
       <div className="container mx-auto flex justify-between items-center">
         <h1 className="font-semibold text-xl">
           <Link href="/">SNS Clone</Link>

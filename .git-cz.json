@@ -1,0 +1,71 @@
+{
+  "disableEmoji": false,
+  "list": [
+    "feat",
+    "fix",
+    "test",
+    "style",
+    "refactor",
+    "perf",
+    "ci",
+    "docs",
+    "config",
+    "release"
+  ],
+  "maxMessageLength": 64,
+  "minMessageLength": 3,
+  "questions": ["type", "scope", "subject", "body"],
+  "scopes": [""],
+  "types": {
+    "ci": {
+      "description": "CIに関連する修正",
+      "emoji": "🎡",
+      "value": "ci"
+    },
+    "docs": {
+      "description": "ドキュメントのみの修正",
+      "emoji": "📚",
+      "value": "docs"
+    },
+    "feat": {
+      "description": "機能追加・修正",
+      "emoji": "🎸",
+      "value": "feat"
+    },
+    "fix": {
+      "description": "バグ修正",
+      "emoji": "🐛",
+      "value": "fix"
+    },
+    "perf": {
+      "description": "パフォーマンス向上させるコード変更",
+      "emoji": "⚡️",
+      "value": "perf"
+    },
+    "refactor": {
+      "description": "リファクタリング・バグ修正や機能追加しないコード",
+      "emoji": "💡",
+      "value": "refactor"
+    },
+    "release": {
+      "description": "リリースコミット",
+      "emoji": "🎉",
+      "value": "release"
+    },
+    "style": {
+      "description": "マークアップ・空白・フォーマットの修正",
+      "emoji": "💄",
+      "value": "style"
+    },
+    "test": {
+      "description": "テストの追加・修正",
+      "emoji": "💚",
+      "value": "test"
+    },
+    "config": {
+      "description": "環境やプロジェクト設定に関わる修正",
+      "emoji": "🛠",
+      "value": "config"
+    }
+  }
+}

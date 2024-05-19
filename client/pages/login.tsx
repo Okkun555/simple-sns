@@ -1,6 +1,35 @@
+import { apiClient } from "@/lib/apiClient";
 import Head from "next/head";
+import { useRouter } from "next/router";
+import { useState } from "react";
 
 export default function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const router = useRouter();
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    try {
+      const response = await apiClient.post("/auth/login", {
+        email,
+        password,
+      });
+
+      const token = response.data.token;
+      console.log(token);
+
+      router.push("/");
+    } catch (error) {
+      if (error instanceof Error) {
+        console.error(error.message);
+      }
+      alert("エラーが発生しました。");
+    }
+  };
+
   return (
     <div
       style={{ height: "88vh" }}
@@ -16,7 +45,7 @@ export default function Login() {
       </div>
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-          <form>
+          <form onSubmit={handleSubmit}>
             <div>
               <label
                 htmlFor="email"
@@ -27,6 +56,7 @@ export default function Login() {
               <input
                 id="email"
                 name="email"
+                onChange={(e) => setEmail(e.target.value)}
                 type="email"
                 autoComplete="email"
                 required
@@ -43,6 +73,7 @@ export default function Login() {
               <input
                 id="password"
                 name="password"
+                onChange={(e) => setPassword(e.target.value)}
                 type="password"
                 autoComplete="current-password"
                 required
